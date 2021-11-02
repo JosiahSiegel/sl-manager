@@ -43,7 +43,7 @@ echo '
 '
 
 echo "Preparing test infrastructure...(if exists)"
-./modules/$module/test_prep.sh -d $distro -m $module -u $user > /dev/null &
+./modules/$module/test_prep.sh -d $distro -m $module -u $user &> /dev/null &
 waiting
 
 echo '
