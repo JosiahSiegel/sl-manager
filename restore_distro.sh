@@ -2,6 +2,6 @@
 
 source lib/args.sh
 
-wsl --import $marg0 'bin\'"$marg0"''-''"$marg1"'\' 'backups\'"$marg0"'-'"$marg1"'-backup.tar'
+wsl --import $distro 'bin\'"$distro"''-''"$module"'\' 'backups\'"$distro"'-'"$module"'-backup.tar'
 
-./up_distro.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0
+./up_distro.sh -d $distro -m $module -u $user

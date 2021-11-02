@@ -28,4 +28,4 @@ echo '
 #          application         #
 ################################
 '
-./modules/$marg1/status_distro.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0
+./modules/$module/status_distro.sh -d $distro -m $module -u $user

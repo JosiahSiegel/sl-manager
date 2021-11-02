@@ -1,18 +1,18 @@
 # [prime-reportstream](https://github.com/CDCgov/prime-reportstream)
 
 ```sh
-m0="Ubuntu"; # Distro name
-m1="prime-reportstream"; # Module name
+d="Ubuntu-20.04"; # Distro name
+m="prime-reportstream"; # Module name
+u="primeruser"; # Username
 
-./init_distro.sh -m0 $m0 -m1 $m1;
-./status_distro.sh -m0 $m0 -m1 $m1;
-./backup_distro.sh -m0 $m0 -m1 $m1;
-./down_distro.sh -m0 $m0 -m1 $m1;
-./up_distro.sh -m0 $m0 -m1 $m1;
-./destroy_distro.sh -m0 $m0 -m1 $m1;
-./restore_distro.sh -m0 $m0 -m1 $m1;
-./up_distro.sh -m0 $m0 -m1 $m1;
-./test_distro.sh -m0 $m0 -m1 $m1;
+./init_distro.sh -d $d -m $m -u $u;
+./status_distro.sh -d $d -m $m -u $u;
+./backup_distro.sh -d $d -m $m -u $u;
+./down_distro.sh -d $d -m $m -u $u;
+./up_distro.sh -d $d -m $m -u $u;
+./destroy_distro.sh -d $d -m $m -u $u;
+./restore_distro.sh -d $d -m $m -u $u;
+./test_distro.sh -d $d -m $m -u $u;
 
 ```
 ---

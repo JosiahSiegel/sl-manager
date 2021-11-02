@@ -8,7 +8,7 @@ Applications are seperated out into directories within [modules](modules/).
 ## Quick start
 
 ```sh
-./init_distro.sh -m0 "Ubuntu-18.04" -m1 "generic" # -m0:Distro, -m1:Module
+./init_distro.sh -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module
 ```
 
 ## Scripts
@@ -26,33 +26,32 @@ Applications are seperated out into directories within [modules](modules/).
 The following scripts can be run in various order, but some run orders are not compatible (e.g. *destroy then test*):
 
 ```sh
-m0="Ubuntu"; # Distro name
-m1="generic"; # Module name
+d="Ubuntu"; # Distro name
+m="generic"; # Module name
 
-./init_distro.sh -m0 $m0 -m1 $m1;
-./status_distro.sh -m0 $m0 -m1 $m1;
-./backup_distro.sh -m0 $m0 -m1 $m1;
-./down_distro.sh -m0 $m0 -m1 $m1;
-./up_distro.sh -m0 $m0 -m1 $m1;
-./destroy_distro.sh -m0 $m0 -m1 $m1;
-./restore_distro.sh -m0 $m0 -m1 $m1;
-./up_distro.sh -m0 $m0 -m1 $m1;
-./test_distro.sh -m0 $m0 -m1 $m1;
+./init_distro.sh -d $d -m $m;
+./status_distro.sh -d $d -m $m;
+./backup_distro.sh -d $d -m $m;
+./down_distro.sh -d $d -m $m;
+./up_distro.sh -d $d -m $m;
+./destroy_distro.sh -d $d -m $m;
+./restore_distro.sh -d $d -m $m;
+./test_distro.sh -d $d -m $m;
 
 ```
 ---
 
 **Mandatory:**
- * `-m0`, `--mandatory0`  VAL  Distro name (*reference: wsl --list --online*)
- * `-m1`, `--mandatory1`  VAL  Application name
+ * `-d`, `--distro`  VAL  Distro name (*reference: wsl --list --online*)
+ * `-m`, `--module`  VAL  Application name
 
 **Optional:**
- * `-o0`, `--optional0`   VAL  username
- * `-h`,  `--help`             Prints this help
+ * `-u`, `--user`    VAL  username
+ * `-h`, `--help`         Prints this help
 
 **Examples:** 
- * `[SCRIPT] -m0 VAL -m1 VAL -o0 VAL`
- * `./init_distro.sh -m0 "Ubuntu-18.04" -m1 "generic" -o0 "user3"`
+ * `[SCRIPT] -d VAL -m VAL -u VAL`
+ * `./init_distro.sh -d "Ubuntu-18.04" -m "generic" -u "user3"`
 
 ## Notes
 

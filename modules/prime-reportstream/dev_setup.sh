@@ -2,13 +2,13 @@
 
 source lib/args.sh
 
-wsl -d $marg0 -e bash -c \
+wsl -d $distro -e bash -c \
 ' \
-touch /home/'"$oarg0"'/.hushlogin; \
-touch /home/'"$oarg0"'/.landscape; \
-touch /home/'"$oarg0"'/.motd_shown; \
-echo "'"$oarg0"' ALL=(ALL:ALL) NOPASSWD: ALL" | tee /etc/sudoers.d/'"$oarg0"'; \
-chown -R '"$oarg0"':'"$oarg0"' /home/'"$oarg0"'/; \
+touch /home/'"$user"'/.hushlogin; \
+touch /home/'"$user"'/.landscape; \
+touch /home/'"$user"'/.motd_shown; \
+echo "'"$user"' ALL=(ALL:ALL) NOPASSWD: ALL" | tee /etc/sudoers.d/'"$user"'; \
+chown -R '"$user"':'"$user"' /home/'"$user"'/; \
 apt update; \
 apt-get update; \
 apt-get -y upgrade; \
