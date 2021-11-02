@@ -3,7 +3,7 @@
 ```sh
 d="Ubuntu-20.04"; # Distro name
 m="prime-reportstream"; # Module name
-u="primeruser"; # Username
+u="primeuser"; # Username
 
 ./init_distro.sh -d $d -m $m -u $u;
 ./status_distro.sh -d $d -m $m -u $u;
