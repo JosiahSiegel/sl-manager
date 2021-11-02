@@ -2,4 +2,4 @@
 
 source lib/args.sh
 
-wsl --export $marg0 'backups\'"$marg0"'-'"$marg1"'-backup.tar'
+wsl --export $distro 'backups\'"$distro"'-'"$module"'-backup.tar'

@@ -2,6 +2,6 @@
 
 source lib/args.sh
 
-./lib/fix_docker.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0
+./lib/fix_docker.sh -d $distro -m $module -u $user
 
-./modules/$marg1/up_distro.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0
+./modules/$module/up_distro.sh -d $distro -m $module -u $user

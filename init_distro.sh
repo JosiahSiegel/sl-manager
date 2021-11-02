@@ -10,21 +10,21 @@ echo '
 '
 
 echo "(Re)initializing raw distro"
-./destroy_distro.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0 &>/dev/null
+./destroy_distro.sh -d $distro -m $module -u $user &>/dev/null
 sleep 5
 
-wsl --install -d $marg0
+wsl --install -d $distro
 sleep 15
 
 echo "Creating dev env"
 echo ""
 echo "***"
 echo "CHANGE ROOT PASSWORD FROM 'temp'!"
-echo "User '"$oarg0"'"
+echo "User '"$user"'"
 echo "***"
 echo ""
-./lib/generic_setup.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0
-./modules/$marg1/dev_setup.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0 &>/dev/null &
+./lib/generic_setup.sh -d $distro -m $module -u $user
+./modules/$module/dev_setup.sh -d $distro -m $module -u $user &>/dev/null &
 waiting
 
 echo '
@@ -34,7 +34,7 @@ echo '
 '
 
 echo "Preparing docker desktop...(if installed)"
-./lib/fix_docker.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0
+./lib/fix_docker.sh -d $distro -m $module -u $user
 
 echo '
 ################################
@@ -43,7 +43,7 @@ echo '
 '
 
 echo "Preparing test infrastructure...(if exists)"
-./modules/$marg1/test_prep.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0 > /dev/null &
+./modules/$module/test_prep.sh -d $distro -m $module -u $user > /dev/null &
 waiting
 
 echo '
@@ -53,4 +53,4 @@ echo '
 '
 
 echo "Running test...(if exists)"
-./modules/$marg1/test.sh -m0 $marg0 -m1 $marg1 -o0 $oarg0
+./modules/$module/test.sh -d $distro -m $module -u $user

@@ -2,7 +2,7 @@
 
 source lib/args.sh
 
-wsl -d $marg0 -u $oarg0 -e bash -c \
+wsl -d $distro -u $user -e bash -c \
 ' \
 gradle --version; \
 docker --version; \

@@ -5,8 +5,8 @@ margs=2
 
 # Common functions - BEGIN
 function example {
-    echo -e "example: [COMMAND] -m0 VAL -m1 VAL -o0 VAL"
-    echo -e "example: ./init_distro.sh -m0 'Ubuntu-18.04' -m1 'my-app' -o0 'user3'"
+    echo -e "example: [COMMAND] -d VAL -m VAL -u VAL"
+    echo -e "example: ./init_distro.sh -d 'Ubuntu-18.04' -m 'my-app' -u 'user3'"
 }
 
 function usage {
@@ -16,11 +16,11 @@ function usage {
 function help {
   usage
     echo -e "MANDATORY:"
-    echo -e "  -m0, --mandatory0  VAL  Distro name (*reference: wsl --list --online*)"
-    echo -e "  -m1, --mandatory1  VAL  Application name\n"
+    echo -e "  -d, --distro  VAL  Distro name (*reference: wsl --list --online*)"
+    echo -e "  -m, --module  VAL  Application name\n"
     echo -e "OPTION:"
-    echo -e "  -o0, --optional0   VAL  Username"
-    echo -e "  -h,  --help             Prints this help\n"
+    echo -e "  -u, --user    VAL  Username"
+    echo -e "  -h,  --help        Prints this help\n"
   example
 }
 
@@ -53,22 +53,22 @@ function margs_check {
 # Main
 margs_precheck $# $1
 
-marg0=
-marg1=
-oarg0="user"
+distro=
+module=
+user="user"
 
 # Args while-loop
 while [ "$1" != "" ];
 do
    case $1 in
-   -m0  | --mandatory0 )  shift
-                          marg0=$1
+   -d  | --distro )  shift
+                          distro=$1
                 		  ;;
-   -m1  | --mandatory1 )  shift
-   						  marg1=$1
+   -m  | --module )  shift
+   						            module=$1
 			              ;;
-   -o0  | --optional0  )  shift
-                          oarg0=$1
+   -u  | --user  )  shift
+                          user=$1
                           ;;
    -h   | --help )        help
                           exit
@@ -84,4 +84,4 @@ do
 done
 
 # Pass here your mandatory args for check
-margs_check $marg0 $marg1
+margs_check $distro $module
