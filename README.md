@@ -11,6 +11,31 @@ Applications are seperated out into directories within [modules](modules/).
 ./init_distro.sh -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module
 ```
 
+## Security
+
+Place desired `.pgp` & `.gitconfig` files to import into the distro in the `backups/` directory.
+
+ * Directory contents are added to `.gitignore`.
+
+Example `.gitconfig`:
+
+```sh
+[user]
+	name = First Last
+	email = my@email.com
+	signingKey = xxx
+
+[commit]
+	gpgSign = True
+```
+
+How to import pgp files from keybase.io:
+
+```sh
+keybase pgp export -q xxx > backups/public.pgp
+keybase pgp export -q xxx --secret > backups/private.pgp
+```
+
 ## Scripts
 
 1. `init_distro.sh` (Re)initialize env.
