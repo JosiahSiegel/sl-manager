@@ -13,9 +13,7 @@ Applications are seperated out into directories within [modules](modules/).
 
 ## Security
 
-Place desired `.pgp` & `.gitconfig` files to import into the distro in the `backups/` directory.
-
- * Directory contents are added to `.gitignore`.
+Place `.pgp` & `.gitconfig` files into the `backups/` directory (*ignored by git*).
 
 Example `.gitconfig`:
 
