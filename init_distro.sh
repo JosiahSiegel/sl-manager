@@ -53,4 +53,4 @@ echo '
 '
 
 echo "Running test...(if exists)"
-./modules/$module/test.sh -d $distro -m $module -u $user
+./test_distro.sh -d $distro -m $module -u $user

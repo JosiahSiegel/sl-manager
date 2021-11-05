@@ -7,8 +7,6 @@ wsl -d $distro -e bash -c \
 touch /home/'"$user"'/.hushlogin; \
 touch /home/'"$user"'/.landscape; \
 touch /home/'"$user"'/.motd_shown; \
-echo "'"$user"' ALL=(ALL:ALL) NOPASSWD: ALL" | tee /etc/sudoers.d/'"$user"'; \
-chown -R '"$user"':'"$user"' /home/'"$user"'/; \
 apt update; \
 apt-get update; \
 apt-get -y upgrade; \

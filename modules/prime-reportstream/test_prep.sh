@@ -14,10 +14,12 @@ docker-compose --version; \
 mkdir -p ~/repos/; \
 cd ~/repos/; \
 git clone --filter=tree:0 https://github.com/CDCgov/prime-reportstream.git; \
-cd prime-reportstream/prime-router/; \
+cd prime-reportstream/; \
+sudo chown -R '"$user"':'"$user"' .git/; \
+cd prime-router/; \
 echo ""; \
 echo "cleanslate.sh started"; \
-./cleanslate.sh; \
+./cleanslate.sh --prune-volumes; \
 echo "cleanslate.sh finished"; \
 export $(xargs < .vault/env/.env.local); \
 echo ""; \
@@ -34,10 +36,4 @@ echo "devenv-infrastructure.sh finished"; \
         --pass pass; \
 ./prime multiple-settings \
         set --input settings/organizations.yml; \
-docker exec -it prime-router_sftp_1 chmod 777 /home/foo/upload; \
-'
-
-wsl -d $distro -e bash -c \
-' \
-docker exec -it prime-router_sftp_1 chmod 777 /home/foo/upload; \
 '
