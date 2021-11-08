@@ -54,3 +54,12 @@ echo '
 
 echo "Running test...(if exists)"
 ./test_distro.sh -d $distro -m $module -u $user
+
+echo '
+################################
+#         enter distro         #
+################################
+'
+
+echo "Entering distro..."
+./enter_distro.sh -d $distro -m $module -u $user
