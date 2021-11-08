@@ -76,6 +76,14 @@ m="generic"; # Module name
  * `[SCRIPT] -d VAL -m VAL -u VAL`
  * `./init_distro.sh -d "Ubuntu-18.04" -m "generic" -u "user3"`
 
+## Tips
+
+Quick re-use arguments:
+  1. Create `backups/default.sh` file
+     * `-d Ubuntu-20.04 -m generic -u user3`
+  2. Run script using default file
+     * `./init_distro.sh $(cat backups/defaults.sh)`
+
 ## Notes
 
 Currently, only tested using Git Bash via Windows Terminal.
