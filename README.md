@@ -1,5 +1,10 @@
 # WSL-Distro-Env-Manager
 
+![](https://badgen.net/badge/icon/gitguardian/green?icon=gitguardian&label)
+![](https://badgen.net/badge/icon/windows?icon=windows&label
+)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/josiahsiegel/WSL-Distro-Env-Manager)
+
 ## Synopsis
 
 Easily manage your WSL environment with a handful of generic bash scripts.
@@ -9,6 +14,10 @@ Applications are seperated out into directories within [modules](modules/).
 
 ```sh
 ./init_distro.sh -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module
+```
+or
+```sh
+./init_distro.sh $(cat defaults/generic.sh)
 ```
 
 ## Security
@@ -79,10 +88,10 @@ m="generic"; # Module name
 ## Tips
 
 Quick re-use arguments:
-  1. Create `backups/default.sh` file
+  1. Create `defaults/my_args.sh` file
      * `-d Ubuntu-20.04 -m generic -u user3`
   2. Run script using default file
-     * `./init_distro.sh $(cat backups/defaults.sh)`
+     * `./init_distro.sh $(cat defaults/my_args.sh)`
 
 ## Notes
 
