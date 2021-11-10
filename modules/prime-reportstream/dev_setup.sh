@@ -29,7 +29,7 @@ apt-get -y install postgresql-11; \
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose; \
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -; \
 sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"; \
-sudo apt install terraform; \
+sudo apt install terraform=1.0.5 -y; \
 apt-get install make -y; \
 chmod +x /usr/local/bin/docker-compose; \
 '

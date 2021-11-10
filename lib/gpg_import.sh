@@ -11,6 +11,6 @@ gpg --pinentry-mode loopback --import $path/*.pgp; \
 cp $path/.gitconfig ~/.gitconfig; \
 cp $path/.gitconfig /home/'"$user"'/.gitconfig; \
 sudo chown -R '"$user"':'"$user"' /home/'"$user"'/.gitconfig; \
-export GPG_TTY=$(tty); \
+echo "export GPG_TTY=\$(tty)" >>~/.bashrc; \
 echo "cd ~" >>~/.bashrc; \
 '
