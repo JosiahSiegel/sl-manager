@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source lib/args.sh
-
 echo '
 ################################
 #           distros            #
@@ -32,4 +30,4 @@ echo '
 #          application         #
 ################################
 '
-./modules/$module/status_distro.sh -d $distro -m $module -u $user
+./modules/$2/status_distro.sh $1 $2 $3

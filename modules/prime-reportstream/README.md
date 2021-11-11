@@ -5,14 +5,14 @@ d="Ubuntu-20.04"; # Distro name
 m="prime-reportstream"; # Module name
 u="primeuser"; # Username
 
-./init_distro.sh -d $d -m $m -u $u;
-./status_distro.sh -d $d -m $m -u $u;
-./backup_distro.sh -d $d -m $m -u $u;
-./down_distro.sh -d $d -m $m -u $u;
-./up_distro.sh -d $d -m $m -u $u;
-./destroy_distro.sh -d $d -m $m -u $u;
-./restore_distro.sh -d $d -m $m -u $u;
-./test_distro.sh -d $d -m $m -u $u;
+./slm init -d $d -m $m -u $u;
+./slm status -d $d -m $m -u $u;
+./slm backup -d $d -m $m -u $u;
+./slm down -d $d -m $m -u $u;
+./slm up -d $d -m $m -u $u;
+./slm destroy -d $d -m $m -u $u;
+./slm restore -d $d -m $m -u $u;
+./slm test -d $d -m $m -u $u;
 
 ```
 ---
