@@ -4,14 +4,14 @@
 d="Ubuntu"; # Distro name
 m="generic"; # Module name
 
-./init_distro.sh -d $d -m $m;
-./status_distro.sh -d $d -m $m;
-./backup_distro.sh -d $d -m $m;
-./down_distro.sh -d $d -m $m;
-./up_distro.sh -d $d -m $m;
-./destroy_distro.sh -d $d -m $m;
-./restore_distro.sh -d $d -m $m;
-./test_distro.sh -d $d -m $m;
+./slm init -d $d -m $m;
+./slm status -d $d -m $m;
+./slm backup -d $d -m $m;
+./slm down -d $d -m $m;
+./slm up -d $d -m $m;
+./slm destroy -d $d -m $m;
+./slm restore -d $d -m $m;
+./slm test -d $d -m $m;
 
 ```
 ---

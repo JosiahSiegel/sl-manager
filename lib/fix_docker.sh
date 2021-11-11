@@ -1,6 +1,3 @@
 #!/bin/bash
 
-source lib/waiting.sh
-source lib/args.sh
-
-./modules/$module/fix_docker.sh -d $distro -m $module -u $user
+./modules/$2/fix_docker.sh $1 $2 $3

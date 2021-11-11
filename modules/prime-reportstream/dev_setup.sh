@@ -1,12 +1,10 @@
 #!/bin/bash
 
-source lib/args.sh
-
-wsl -d $distro -e bash -c \
+wsl -d $1 -e bash -c \
 ' \
-touch /home/'"$user"'/.hushlogin; \
-touch /home/'"$user"'/.landscape; \
-touch /home/'"$user"'/.motd_shown; \
+touch /home/'"$3"'/.hushlogin; \
+touch /home/'"$3"'/.landscape; \
+touch /home/'"$3"'/.motd_shown; \
 apt update; \
 apt-get update; \
 apt-get -y upgrade; \

@@ -1,23 +1,23 @@
-# WSL-Distro-Env-Manager
+# Subsystem for Linux Manager
 
 ![](https://badgen.net/badge/icon/gitguardian/green?icon=gitguardian&label)
 ![](https://badgen.net/badge/icon/windows?icon=windows&label
 )
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/josiahsiegel/WSL-Distro-Env-Manager)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/JosiahSiegel/sl-manager)
 
 ## Synopsis
 
-Easily manage your WSL environment with a handful of generic bash scripts.
-Applications are seperated out into directories within [modules](modules/).
+Easily manage your WSL environment with a handful of generic commands.
+Applications are seperated into [modules](modules/).
 
 ## Quick start
 
 ```sh
-./init_distro.sh -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module
+./slm init -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module
 ```
 or
 ```sh
-./init_distro.sh $(cat defaults/generic.sh)
+./slm init $(cat defaults/generic.sh)
 ```
 
 ## Security
@@ -43,17 +43,17 @@ keybase pgp export -q xxx > backups/public.pgp
 keybase pgp export -q xxx --secret > backups/private.pgp
 ```
 
-## Scripts
+## Commands
 
-1. `init_distro.sh` (Re)initialize env.
-2. `status_distro.sh` Status of env.
-3. `backup_distro.sh` Backup env to `.tar` file.
-4. `down_distro.sh` Shutdown env.
-5. `up_distro.sh` Bring env up after shutdown.
-6. `destroy_distro.sh` Destroy env.
-7. `restore_distro.sh` Restore env from `.tar` file.
-8. `test_distro.sh` Run module specific env tests.
-9. `fix_distro.sh` Run module specific env fixes.
+1. `init` (Re)initialize env.
+2. `status` Status of env.
+3. `backup` Backup env to `.tar` file.
+4. `down` Shutdown env.
+5. `up` Bring env up after shutdown.
+6. `destroy` Destroy env.
+7. `restore` Restore env from `.tar` file.
+8. `test` Run module specific env tests.
+9. `fix` Run module specific env fixes.
 
 The following scripts can be run in various order, but some run orders are not compatible (e.g. *destroy then test*):
 
@@ -61,14 +61,14 @@ The following scripts can be run in various order, but some run orders are not c
 d="Ubuntu"; # Distro name
 m="generic"; # Module name
 
-./init_distro.sh -d $d -m $m;
-./status_distro.sh -d $d -m $m;
-./backup_distro.sh -d $d -m $m;
-./down_distro.sh -d $d -m $m;
-./up_distro.sh -d $d -m $m;
-./destroy_distro.sh -d $d -m $m;
-./restore_distro.sh -d $d -m $m;
-./test_distro.sh -d $d -m $m;
+./slm init -d $d -m $m;
+./slm status -d $d -m $m;
+./slm backup -d $d -m $m;
+./slm down -d $d -m $m;
+./slm up -d $d -m $m;
+./slm destroy -d $d -m $m;
+./slm restore -d $d -m $m;
+./slm test -d $d -m $m;
 
 ```
 ---
@@ -82,8 +82,8 @@ m="generic"; # Module name
  * `-h`, `--help`         Prints this help
 
 **Examples:** 
- * `[SCRIPT] -d VAL -m VAL -u VAL`
- * `./init_distro.sh -d "Ubuntu-18.04" -m "generic" -u "user3"`
+ * `./slm [COMMAND] -d VAL -m VAL -u VAL`
+ * `./slm init -d "Ubuntu-18.04" -m "generic" -u "user3"`
 
 ## Tips
 
@@ -91,7 +91,7 @@ Quick re-use arguments:
   1. Create `defaults/my_args.sh` file
      * `-d Ubuntu-20.04 -m generic -u user3`
   2. Run script using default file
-     * `./init_distro.sh $(cat defaults/my_args.sh)`
+     * `./slm init $(cat defaults/my_args.sh)`
 
 ## Notes
 

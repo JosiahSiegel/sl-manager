@@ -1,8 +1,6 @@
 #!/bin/bash
 
-source lib/args.sh
-
-wsl -d $distro -u $user -e bash -c \
+wsl -d $1 -u $3 -e bash -c \
 ' \
 gradle --version; \
 docker --version; \
@@ -15,7 +13,7 @@ mkdir -p ~/repos/; \
 cd ~/repos/; \
 git clone --filter=tree:0 https://github.com/CDCgov/prime-reportstream.git; \
 cd prime-reportstream/; \
-sudo chown -R '"$user"':'"$user"' .; \
+sudo chown -R '"$3"':'"$3"' .; \
 cd prime-router/; \
 echo "cleanslate.sh started"; \
 ./cleanslate.sh --prune-volumes; \

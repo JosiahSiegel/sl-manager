@@ -1,8 +1,6 @@
 #!/bin/bash
 
-source lib/args.sh
-
-wsl -d $distro -u $user -e bash -c \
+wsl -d $1 -u $2 -e bash -c \
 ' \
 cd ~/repos/prime-reportstream/prime-router/; \
 ./devenv-infrastructure.sh down; \

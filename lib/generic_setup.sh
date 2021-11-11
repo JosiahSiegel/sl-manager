@@ -1,14 +1,11 @@
 #!/bin/bash
 
-source lib/waiting.sh
-source lib/args.sh
-
-wsl -d $distro -e bash -c \
+wsl -d $1 -e bash -c \
 ' \
 echo "root:temp" | chpasswd; \
-useradd -m '"$user"'; \
-echo "'"$user"' ALL=(ALL:ALL) NOPASSWD: ALL" | tee /etc/sudoers.d/'"$user"'; \
-chown -R '"$user"':'"$user"' /home/'"$user"'/; \
+useradd -m '"$3"'; \
+echo "'"$3"' ALL=(ALL:ALL) NOPASSWD: ALL" | tee /etc/sudoers.d/'"$3"'; \
+chown -R '"$3"':'"$3"' /home/'"$3"'/; \
 '
 
-./lib/gpg_import.sh -d $distro -m $module -u $user
+./lib/gpg_import.sh $1 $2 $3
