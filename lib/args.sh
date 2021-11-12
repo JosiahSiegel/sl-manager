@@ -7,12 +7,12 @@ margs=2
 
 # Common functions - BEGIN
 function example {
-  echo -e "example: ./slm [COMMAND] -d VAL -m VAL -u VAL"
-  echo -e "example: ./slm init -d 'Ubuntu-18.04' -m 'generic' -u 'user3'"
+  echo -e "example: ./rwsl [COMMAND] -d VAL -m VAL -u VAL"
+  echo -e "example: ./rwsl init -d 'Ubuntu-18.04' -m 'generic' -u 'user3'"
 }
 
 function usage {
-  echo -e "usage: ./slm [COMMAND] MANDATORY [OPTION]\n"
+  echo -e "usage: ./rwsl [COMMAND] MANDATORY [OPTION]\n"
 }
 
 function help {

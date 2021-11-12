@@ -1,9 +1,9 @@
-# Subsystem for Linux Manager
+# Rapid WSL
 
 ![](https://badgen.net/badge/icon/gitguardian/green?icon=gitguardian&label)
 ![](https://badgen.net/badge/icon/windows?icon=windows&label
 )
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/JosiahSiegel/sl-manager)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/JosiahSiegel/rapid-wsl)
 
 ## Synopsis
 
@@ -13,11 +13,11 @@ Applications are seperated into [modules](modules/).
 ## Quick start
 
 ```sh
-./slm init -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module
+./rwsl init -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module
 ```
 or
 ```sh
-./slm init $(cat defaults/generic.sh)
+./rwsl init $(cat defaults/generic.sh)
 ```
 
 ## Security
@@ -61,14 +61,14 @@ The following scripts can be run in various order, but some run orders are not c
 d="Ubuntu"; # Distro name
 m="generic"; # Module name
 
-./slm init -d $d -m $m;
-./slm status -d $d -m $m;
-./slm backup -d $d -m $m;
-./slm down -d $d -m $m;
-./slm up -d $d -m $m;
-./slm destroy -d $d -m $m;
-./slm restore -d $d -m $m;
-./slm test -d $d -m $m;
+./rwsl init -d $d -m $m;
+./rwsl status -d $d -m $m;
+./rwsl backup -d $d -m $m;
+./rwsl down -d $d -m $m;
+./rwsl up -d $d -m $m;
+./rwsl destroy -d $d -m $m;
+./rwsl restore -d $d -m $m;
+./rwsl test -d $d -m $m;
 
 ```
 ---
@@ -82,8 +82,8 @@ m="generic"; # Module name
  * `-h`, `--help`         Prints this help
 
 **Examples:** 
- * `./slm [COMMAND] -d VAL -m VAL -u VAL`
- * `./slm init -d "Ubuntu-18.04" -m "generic" -u "user3"`
+ * `./rwsl [COMMAND] -d VAL -m VAL -u VAL`
+ * `./rwsl init -d "Ubuntu-18.04" -m "generic" -u "user3"`
 
 ## Tips
 
@@ -91,7 +91,7 @@ Quick re-use arguments:
   1. Create `defaults/my_args.sh` file
      * `-d Ubuntu-20.04 -m generic -u user3`
   2. Run script using default file
-     * `./slm init $(cat defaults/my_args.sh)`
+     * `./rwsl init $(cat defaults/my_args.sh)`
 
 ## Notes
 

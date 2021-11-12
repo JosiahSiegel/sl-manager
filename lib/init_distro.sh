@@ -7,9 +7,9 @@ echo '
 '
 
 echo "(Re)initializing raw distro"
-./slm destroy -d $1 -m $2 -u $3
+./rwsl destroy -d $1 -m $2 -u $3
 
-./slm install -d $1 -m $2 -u $3
+./rwsl install -d $1 -m $2 -u $3
 
 echo '
 ################################
@@ -18,7 +18,7 @@ echo '
 '
 
 echo "Preparing docker desktop...(if installed)"
-./slm docker -d $1 -m $2 -u $3
+./rwsl docker -d $1 -m $2 -u $3
 
 echo '
 ################################
@@ -27,7 +27,7 @@ echo '
 '
 
 echo "Preparing env..."
-./slm setup -d $1 -m $2 -u $3
+./rwsl setup -d $1 -m $2 -u $3
 
 echo '
 ################################
@@ -36,7 +36,7 @@ echo '
 '
 
 echo "Running test...(if exists)"
-./slm test -d $1 -m $2 -u $3
+./rwsl test -d $1 -m $2 -u $3
 
 echo '
 ################################
@@ -45,4 +45,4 @@ echo '
 '
 
 echo "Entering distro..."
-./slm enter -d $1 -m $2 -u $3
+./rwsl enter -d $1 -m $2 -u $3
