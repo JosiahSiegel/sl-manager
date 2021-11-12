@@ -5,14 +5,14 @@ d="Ubuntu-20.04"; # Distro name
 m="prime-reportstream"; # Module name
 u="primeuser"; # Username
 
-./slm init -d $d -m $m -u $u;
-./slm status -d $d -m $m -u $u;
-./slm backup -d $d -m $m -u $u;
-./slm down -d $d -m $m -u $u;
-./slm up -d $d -m $m -u $u;
-./slm destroy -d $d -m $m -u $u;
-./slm restore -d $d -m $m -u $u;
-./slm test -d $d -m $m -u $u;
+./rwsl init -d $d -m $m -u $u;
+./rwsl status -d $d -m $m -u $u;
+./rwsl backup -d $d -m $m -u $u;
+./rwsl down -d $d -m $m -u $u;
+./rwsl up -d $d -m $m -u $u;
+./rwsl destroy -d $d -m $m -u $u;
+./rwsl restore -d $d -m $m -u $u;
+./rwsl test -d $d -m $m -u $u;
 
 ```
 ---
