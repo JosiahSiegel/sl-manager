@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo ""
+echo "***"
+echo "Setting up gpg"
+echo "Importing \\backups\\*.pgp files:"
+echo "***"
+echo ""
 wsl -d $1 -u $3 -e bash -c \
 ' \
 path=$(wslpath -u '"$PWD"')/backups/; \
@@ -11,3 +17,8 @@ sudo chown -R '"$3"':'"$3"' /home/'"$3"'/.gitconfig; \
 echo "export GPG_TTY=\$(tty)" >>~/.bashrc; \
 echo "cd ~" >>~/.bashrc; \
 '
+echo ""
+echo "***"
+echo "Import complete"
+echo "***"
+echo ""

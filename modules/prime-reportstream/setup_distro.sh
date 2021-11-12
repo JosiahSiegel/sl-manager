@@ -8,6 +8,7 @@ git --version; \
 java --version; \
 psql --version; \
 az --version; \
+mkdir /app/; \
 docker-compose --version; \
 mkdir -p ~/repos/; \
 cd ~/repos/; \
