@@ -12,13 +12,11 @@ echo "Waiting for docker..."
 wsl -d $1 -e bash -c \
 ' \
 until usermod -aG docker '"$3"'; do sleep 5; done \
-' &>/dev/null &
-waiting
+' &>/dev/null
 
 wsl -d $1 -u $3 -e bash -c \
 ' \
 until docker info; do sleep 5; done \
-' &>/dev/null &
-waiting
+' &>/dev/null
 
 echo "Docker restart complete"

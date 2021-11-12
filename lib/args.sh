@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source lib/base.sh
+source ./lib/controller.sh
 
 #Declare the number of mandatory args
 margs=2

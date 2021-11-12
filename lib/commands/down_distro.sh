@@ -1,3 +1,8 @@
 #!/bin/bash
 
-./modules/$2/down_distro.sh $1 $2 $3
+FILE=./modules/$2/down_distro.sh
+if [[ -f "$FILE" ]]; then
+    echo "Running module specific shutdown"
+    $FILE $1 $2 $3 &>/dev/null
+    echo "Completed module specific shutdown"
+fi

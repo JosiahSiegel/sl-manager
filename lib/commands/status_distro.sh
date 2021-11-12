@@ -2,7 +2,7 @@
 
 echo '
 ################################
-#           distros            #
+#      installed distros       #
 ################################
 '
 wsl -l --all
@@ -30,4 +30,10 @@ echo '
 #          application         #
 ################################
 '
-./modules/$2/status_distro.sh $1 $2 $3
+
+FILE=./modules/$2/status_distro.sh
+if [[ -f "$FILE" ]]; then
+    echo "Fetching module specific application status"
+    $FILE $1 $2 $3
+    echo "Completed module specific application status"
+fi

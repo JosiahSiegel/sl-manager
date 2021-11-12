@@ -1,3 +1,8 @@
 #!/bin/bash
 
-./modules/$2/test_distro.sh $1 $2 $3
+FILE=./modules/$2/test_distro.sh
+if [[ -f "$FILE" ]]; then
+    echo "Running module specific test"
+    $FILE $1 $2 $3
+    echo "Completed module specific test"
+fi

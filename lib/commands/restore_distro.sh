@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Restoring backup: backups\\$1-$2-backup.tar"
 wsl --import $1 'bin\'"$1"''-''"$2"'\' 'backups\'"$1"'-'"$2"'-backup.tar'
 
-./lib/commands/up_distro.sh $1 $2 $3
+if [[ ${?} == 0 ]]; then
+    ./lib/commands/up_distro.sh $1 $2 $3
+    echo "Restore complete"
+fi

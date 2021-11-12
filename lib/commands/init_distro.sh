@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./lib/waiting.sh
+
 echo '
 ################################
 #           env init           #
