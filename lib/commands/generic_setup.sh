@@ -8,4 +8,4 @@ echo "'"$3"' ALL=(ALL:ALL) NOPASSWD: ALL" | tee /etc/sudoers.d/'"$3"'; \
 chown -R '"$3"':'"$3"' /home/'"$3"'/; \
 '
 
-./lib/gpg_import.sh $1 $2 $3
+./lib/commands/gpg_import.sh $1 $2 $3
