@@ -23,6 +23,11 @@ chown -R '"$3"':'"$3"' /home/'"$3"'/; \
 
 ./lib/commands/gpg_import.sh $1 $2 $3
 
+wsl -d $1 -u $3 -e bash -c \
+' \
+echo "cd ~" >>~/.bashrc; \
+'
+
 FILE=./modules/$2/install_distro.sh
 if [[ -f "$FILE" ]]; then
     echo "Running module specific install"

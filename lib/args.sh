@@ -127,6 +127,12 @@ while [ "$1" != "" ]; do
       up)
         command="up"
         ;;
+      tips)
+        command="tips"
+        ;;
+      viz)
+        command="viz"
+        ;;
       *)
         echo "[COMMAND]: illegal option $1"
         usage
