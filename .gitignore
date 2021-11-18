@@ -1,5 +1,8 @@
 bin/
 backups/*
 etc/*
-!etc/sample.config_viz.sh
+!etc/sample.viz_config.sh
 !etc/sample.gitconfig
+modules/*
+!modules/generic/
+!modules/prime-reportstream/

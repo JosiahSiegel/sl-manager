@@ -1,4 +1,4 @@
-# [prime-reportstream](https://github.com/CDCgov/prime-reportstream)
+# generic
 
 ```sh
 d="Ubuntu"; # Distro name
