@@ -1,15 +1,15 @@
 #!/bin/bash
 
-FILE=./backups/viz_config.sh
+FILE=./etc/config_viz.sh
 if [[ ! -f $FILE ]]; then
 echo -e "
-## CREATE MISSING FILE: backups/viz_config.sh
+## CREATE MISSING FILE: etc/config_viz.sh
 
 =======================
 #!/bin/bash
 
 RESOURCE_GROUP=\"my-rg\"
-OUT_FILE=\"/mnt\${PWD}/backups/viz.png\"
+OUT_FILE=\"/mnt\${PWD}/etc/viz.png\"
 USER_ID=\"user@microsoft.com\"
 SUB_NAME=\"My-Sub\"
 THEME=\"neon\"
@@ -27,6 +27,7 @@ wsl -d $1 -u $3 -e bash -c \
 sudo apt-get install -y wget apt-transport-https software-properties-common; \
 wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O ~/packages-microsoft-prod.deb; \
 sudo dpkg -i ~/packages-microsoft-prod.deb; \
+sudo apt-get update; \
 sudo apt-get install powershell -y; \
 sudo apt install graphviz -y; \
 sudo pwsh -Command "& { \
