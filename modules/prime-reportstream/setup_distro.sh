@@ -33,10 +33,12 @@ echo "devenv-infrastructure.sh finished"; \
         set --input settings/organizations.yml; \
 cd ../; \
 echo "cd ~/repos/prime-reportstream/" >>~/.bashrc; \
-cp operations/app/src/environments/configurations/dev-sample.tfbackend operations/app/src/environments/configurations/dev.tfbackend; \
-cp operations/app/src/environments/configurations/dev-sample.tfvars operations/app/src/environments/configurations/dev.tfvars; \
-cp /mnt\${PWD}/etc/dev.tfbackend operations/app/src/environments/configurations/; \
-cp /mnt\${PWD}/etc/dev.tfvars operations/app/src/environments/configurations/; \
+cp -n operations/app/src/environments/configurations/dev-sample.tfbackend operations/app/src/environments/configurations/dev.tfbackend; \
+cp -n operations/app/src/environments/configurations/dev-sample.tfvars operations/app/src/environments/configurations/dev.tfvars; \
+cp -n operations/app/src/environments/configurations/dev.tfbackend /mnt'${PWD}'/etc/; \
+cp -n operations/app/src/environments/configurations/dev.tfvars /mnt'${PWD}'/etc/; \
+cp /mnt'${PWD}'/etc/dev.tfbackend operations/app/src/environments/configurations/; \
+cp /mnt'${PWD}'/etc/dev.tfvars operations/app/src/environments/configurations/; \
 code .; \
 sudo chown -R '"$3"':'"$3"' .; \
 '
