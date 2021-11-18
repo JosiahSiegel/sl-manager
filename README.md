@@ -22,11 +22,13 @@ or
 
 ## Security
 
-Place `.pgp` & `.gitconfig` files into the `backups/` directory (*ignored by git*).
+Place `.pgp` & `.gitconfig` files into the `etc/` directory (*ignored by git*).
 
 Example `.gitconfig`:
 
 ```sh
+[core]
+   editor = "vim"
 [user]
 	name = First Last
 	email = my@email.com
@@ -39,8 +41,8 @@ Example `.gitconfig`:
 How to import pgp files from keybase.io:
 
 ```sh
-keybase pgp export -q xxx > backups/public.pgp
-keybase pgp export -q xxx --secret > backups/private.pgp
+keybase pgp export -q xxx > etc/public.pgp
+keybase pgp export -q xxx --secret > etc/private.pgp
 ```
 
 ## Commands

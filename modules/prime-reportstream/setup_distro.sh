@@ -35,8 +35,8 @@ cd ../; \
 echo "cd ~/repos/prime-reportstream/" >>~/.bashrc; \
 cp operations/app/src/environments/configurations/dev-sample.tfbackend operations/app/src/environments/configurations/dev.tfbackend; \
 cp operations/app/src/environments/configurations/dev-sample.tfvars operations/app/src/environments/configurations/dev.tfvars; \
-cp /mnt/c/repos/wsl-distro-env-manager/backups/dev.tfbackend operations/app/src/environments/configurations/; \
-cp /mnt/c/repos/wsl-distro-env-manager/backups/dev.tfvars operations/app/src/environments/configurations/; \
+cp /mnt\${PWD}/etc/dev.tfbackend operations/app/src/environments/configurations/; \
+cp /mnt\${PWD}/etc/dev.tfvars operations/app/src/environments/configurations/; \
 code .; \
 sudo chown -R '"$3"':'"$3"' .; \
 '

@@ -1,2 +1,5 @@
 bin/
 backups/*
+etc/*
+!etc/sample.config_viz.sh
+!etc/sample.gitconfig
