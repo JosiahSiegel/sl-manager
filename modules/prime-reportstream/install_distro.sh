@@ -5,6 +5,13 @@ wsl -d $1 -e bash -c \
 touch /home/'"$3"'/.hushlogin; \
 touch /home/'"$3"'/.landscape; \
 touch /home/'"$3"'/.motd_shown; \
+add-apt-repository -y ppa:apt-fast/stable; \
+apt-get update; \
+DEBIAN_FRONTEND=noninteractive apt-get install -y apt-fast; \
+echo debconf apt-fast/maxdownloads string 16 | debconf-set-selections; \
+echo debconf apt-fast/dlflag boolean true | debconf-set-selections; \
+echo debconf apt-fast/aptmanager string apt-get | debconf-set-selections; \
+echo "alias apt-get='\''apt-fast'\''" >> ~/.bashrc; \
 apt update; \
 apt-get update; \
 apt-get -y upgrade; \
@@ -25,9 +32,9 @@ echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" 
 apt-get update; \
 apt-get -y install postgresql-11; \
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose; \
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -; \
-sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"; \
-sudo apt install terraform=1.0.5 -y; \
+curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -; \
+apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"; \
+apt install terraform=1.0.5 -y; \
 apt-get install make -y; \
 chmod +x /usr/local/bin/docker-compose; \
 '

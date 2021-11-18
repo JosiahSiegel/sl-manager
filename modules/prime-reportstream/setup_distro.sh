@@ -8,7 +8,6 @@ git --version; \
 java --version; \
 psql --version; \
 az --version; \
-mkdir /app/; \
 docker-compose --version; \
 mkdir -p ~/repos/; \
 cd ~/repos/; \
@@ -39,4 +38,5 @@ cp operations/app/src/environments/configurations/dev-sample.tfvars operations/a
 cp /mnt/c/repos/wsl-distro-env-manager/backups/dev.tfbackend operations/app/src/environments/configurations/; \
 cp /mnt/c/repos/wsl-distro-env-manager/backups/dev.tfvars operations/app/src/environments/configurations/; \
 code .; \
+sudo chown -R '"$3"':'"$3"' .; \
 '
