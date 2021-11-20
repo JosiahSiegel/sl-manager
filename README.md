@@ -1,8 +1,7 @@
 # Rapid WSL
 
 ![](https://badgen.net/badge/icon/gitguardian/green?icon=gitguardian&label)
-![](https://badgen.net/badge/icon/windows?icon=windows&label
-)
+![](https://badgen.net/badge/icon/windows?icon=windows&label)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/JosiahSiegel/rapid-wsl)
 
 ## Synopsis

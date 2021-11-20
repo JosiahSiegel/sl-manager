@@ -60,7 +60,3 @@ up() {
 tips() {
     eval ${COMMAND}
 }
-
-viz() {
-    eval ${COMMAND}
-}
