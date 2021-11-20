@@ -130,9 +130,6 @@ while [ "$1" != "" ]; do
       tips)
         command="tips"
         ;;
-      viz)
-        command="viz"
-        ;;
       *)
         echo "[COMMAND]: illegal option $1"
         usage

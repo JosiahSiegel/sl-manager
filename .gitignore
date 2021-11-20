@@ -1,10 +1,6 @@
-bin/
 backups/*
 etc/*
 !etc/sample.gitconfig
-!etc/azviz/Dockerfile
-!etc/azviz/sample.viz_config.sh
-!etc/azviz/viz_run.ps1
 modules/*
 !modules/generic/
 !modules/prime-reportstream/
