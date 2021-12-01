@@ -106,6 +106,9 @@ while [ "$1" != "" ]; do
       test)
         command="test"
         ;;
+      test-pipe)
+        command="test-pipe"
+        ;;
       enter)
         command="enter"
         ;;
