@@ -29,6 +29,10 @@ test() {
     eval ${COMMAND}
 }
 
+test-pipe() {
+    eval ${COMMAND}
+}
+
 enter() {
     eval ${COMMAND}
 }

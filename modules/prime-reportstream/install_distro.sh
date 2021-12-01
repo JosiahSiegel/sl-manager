@@ -37,4 +37,5 @@ apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases
 apt install terraform=1.0.5 -y; \
 apt-get install make -y; \
 chmod +x /usr/local/bin/docker-compose; \
+curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash; \
 '
