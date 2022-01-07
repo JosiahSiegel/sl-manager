@@ -15,7 +15,7 @@ echo "alias apt-get='\''apt-fast'\''" >> ~/.bashrc; \
 apt update; \
 apt-get update; \
 apt-get -y upgrade; \
-apt -y install openjdk-13-jdk; \
+apt -y install openjdk-11-jdk; \
 apt-get --yes install lsb-release gpg; \
 curl https://packages.microsoft.com/keys/microsoft.asc \
     | gpg --dearmor \

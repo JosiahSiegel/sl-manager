@@ -19,9 +19,14 @@ echo "root:temp" | chpasswd; \
 useradd -m '"$3"'; \
 echo "'"$3"' ALL=(ALL:ALL) NOPASSWD: ALL" | tee /etc/sudoers.d/'"$3"'; \
 chown -R '"$3"':'"$3"' /home/'"$3"'/; \
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg; \
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null; \
+apt-get update; \
+apt-get install gh -y; \
 '
 
 ./lib/commands/gpg_import.sh $1 $2 $3
+./lib/commands/git_setup.sh $1 $2 $3
 
 wsl -d $1 -u $3 -e bash -c \
 ' \

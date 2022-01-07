@@ -22,7 +22,7 @@ docker() {
 }
 
 setup() {
-    eval ${COMMAND} & waiting
+    eval ${COMMAND}
 }
 
 test() {

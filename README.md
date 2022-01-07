@@ -44,6 +44,8 @@ keybase pgp export -q xxx > etc/public.pgp
 keybase pgp export -q xxx --secret > etc/private.pgp
 ```
 
+For GitHub authorization, add GitHub personal access token file `git.token` to `etc/`.
+
 ## Commands
 
 1. `init` (Re)initialize env.
