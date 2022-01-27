@@ -2,5 +2,7 @@ backups/*
 etc/*
 !etc/sample.gitconfig
 modules/*
+!modules/README.md
 !modules/generic/
 !modules/prime-reportstream/
+!modules/prime-data-ingestion/
