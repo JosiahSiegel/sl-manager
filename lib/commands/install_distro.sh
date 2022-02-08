@@ -33,6 +33,18 @@ wsl -d $1 -u $3 -e bash -c \
 echo "cd ~" >>~/.bashrc; \
 '
 
+# https://github.com/microsoft/WSL/issues/8022
+wsl -d $1 -e bash -c \
+' \
+echo -e "[network] \ngenerateResolvConf = false" > /etc/wsl.conf; \
+'
+wsl --shutdown
+wsl -d $1 -e bash -c \
+' \
+rm -f /etc/resolv.conf; \
+echo "nameserver 8.8.8.8" > /etc/resolv.conf; \
+'
+
 FILE=./modules/$2/install_distro.sh
 if [[ -f "$FILE" ]]; then
     echo "Running module specific install"
