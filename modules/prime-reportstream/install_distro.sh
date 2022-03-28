@@ -24,7 +24,8 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(l
     | tee "/etc/apt/sources.list.d/dotnetdev.list"; \
 apt-get update; \
 apt-get --yes install azure-functions-core-tools-3; \
-apt-get --yes install azure-cli; \
+apt remove azure-cli -y && apt autoremove -y; \
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash; \
 apt-get -y install unzip; \
 apt -y install gradle; \
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -; \
