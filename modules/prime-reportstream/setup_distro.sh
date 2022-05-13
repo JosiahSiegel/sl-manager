@@ -12,6 +12,7 @@ docker-compose --version; \
 mkdir -p ~/repos/; \
 cd ~/repos/; \
 git clone --filter=tree:0 https://github.com/CDCgov/prime-reportstream.git; \
+git config --global --add safe.directory prime-reportstream; \
 cd prime-reportstream/; \
 sudo chown -R '"$3"':'"$3"' .; \
 cd prime-router/; \
