@@ -6,3 +6,5 @@ modules/*
 !modules/generic/
 !modules/prime-reportstream/
 !modules/prime-data-ingestion/
+courgette.log
+bin/*
