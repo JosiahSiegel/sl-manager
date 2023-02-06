@@ -36,7 +36,12 @@ curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compo
 curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -; \
 apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"; \
 apt install terraform=1.0.5 -y; \
+apt-get install strongswan -y; \
+apt-get install strongswan-pki -y; \
 apt-get install make -y; \
 chmod +x /usr/local/bin/docker-compose; \
 curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash; \
+curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb; \
+sudo apt --fix-broken install ./keybase_amd64.deb; \
+run_keybase; \
 '

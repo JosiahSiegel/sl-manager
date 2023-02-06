@@ -8,3 +8,5 @@ modules/*
 !modules/prime-data-ingestion/
 courgette.log
 bin/*
+.env
+*.deb
