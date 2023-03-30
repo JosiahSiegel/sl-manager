@@ -39,6 +39,7 @@ apt install terraform=1.0.5 -y; \
 apt-get install strongswan -y; \
 apt-get install strongswan-pki -y; \
 apt-get install make -y; \
+apt-get install jq -y; \
 chmod +x /usr/local/bin/docker-compose; \
 curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash; \
 curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb; \
