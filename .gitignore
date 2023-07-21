@@ -10,3 +10,4 @@ courgette.log
 bin/*
 .env
 *.deb
+nohup.out

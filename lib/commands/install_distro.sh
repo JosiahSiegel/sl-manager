@@ -2,7 +2,7 @@
 
 source ./lib/waiting.sh
 
-wsl --install -d $1
+nohup wsl --install -d $1 &
 sleep 15
 
 echo "Creating dev env"
