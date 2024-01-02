@@ -15,7 +15,7 @@ echo "alias apt-get='\''apt-fast'\''" >> ~/.bashrc; \
 apt update; \
 apt-get update; \
 apt-get -y upgrade; \
-apt -y install openjdk-11-jdk; \
+apt -y install openjdk-17-jdk; \
 apt-get --yes install lsb-release gpg; \
 curl https://packages.microsoft.com/keys/microsoft.asc \
     | gpg --dearmor \
@@ -23,7 +23,7 @@ curl https://packages.microsoft.com/keys/microsoft.asc \
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" \
     | tee "/etc/apt/sources.list.d/dotnetdev.list"; \
 apt-get update; \
-apt-get --yes install azure-functions-core-tools-3; \
+apt-get --yes install azure-functions-core-tools-4; \
 apt remove azure-cli -y && apt autoremove -y; \
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash; \
 apt-get -y install unzip; \
