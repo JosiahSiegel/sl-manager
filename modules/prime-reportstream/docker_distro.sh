@@ -5,7 +5,7 @@ wsl --set-default $1
 echo "Restarting docker"
 powershell -c 'Stop-Process -Name "Docker Desktop"'
 sleep 1
-powershell -c 'Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"'
+"C:\Program Files\Docker\Docker\Docker Desktop.exe"
 sleep 1
 
 echo "Waiting for docker..."

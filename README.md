@@ -2,7 +2,9 @@
 
 ![](https://badgen.net/badge/icon/gitguardian/green?icon=gitguardian&label)
 ![](https://badgen.net/badge/icon/windows?icon=windows&label)
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/JosiahSiegel/rapid-wsl)
+[![Open in Visual Studio Code](https://img.shields.io/badge/open%20in-vscode.dev-blue)](https://open.vscode.dev/JosiahSiegel/rapid-wsl)
+
+>⚠️Disable Docker Desktop resource saver due to instability
 
 ## Synopsis
 

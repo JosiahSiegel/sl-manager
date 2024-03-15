@@ -42,7 +42,4 @@ apt-get install make -y; \
 apt-get install jq -y; \
 chmod +x /usr/local/bin/docker-compose; \
 curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash; \
-curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb; \
-sudo apt --fix-broken install ./keybase_amd64.deb; \
-run_keybase; \
 '

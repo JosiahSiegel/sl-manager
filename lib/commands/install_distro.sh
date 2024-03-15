@@ -3,7 +3,7 @@
 source ./lib/waiting.sh
 
 nohup wsl --install -d $1 &
-sleep 15
+sleep 30
 
 echo "Creating dev env"
 echo ""
@@ -38,7 +38,7 @@ wsl -d $1 -e bash -c \
 ' \
 echo -e "[network] \ngenerateResolvConf = false" > /etc/wsl.conf; \
 '
-wsl --shutdown
+wsl --terminate $1
 wsl -d $1 -e bash -c \
 ' \
 rm -f /etc/resolv.conf; \
