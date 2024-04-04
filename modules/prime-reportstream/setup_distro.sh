@@ -31,7 +31,7 @@ echo "devenv-infrastructure.sh finished"; \
         --user foo \
         --pass pass; \
 ./prime multiple-settings \
-        set --input settings/organizations.yml; \
+        set --silent --input settings/organizations.yml; \
 cd ../; \
 echo "cd ~/repos/prime-reportstream/" >>~/.bashrc; \
 cp -n operations/app/src/environments/configurations/dev-sample.tfbackend operations/app/src/environments/configurations/dev.tfbackend; \

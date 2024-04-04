@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wsl -d $1 -u $2 -e bash -c \
+wsl -d $1 -u $3 -e bash -c \
 ' \
 cd ~/repos/prime-reportstream/prime-router/; \
 ./devenv-infrastructure.sh down; \
