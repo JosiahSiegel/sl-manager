@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./lib/commands/down_distro.sh $1 $2 $3
+./lib/commands/down_distro.sh $1 $2 $3 $4
 
 wsl --unregister $1
 

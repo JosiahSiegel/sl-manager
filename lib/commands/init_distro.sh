@@ -9,9 +9,9 @@ echo '
 '
 
 echo "(Re)initializing raw distro"
-./rwsl destroy -d $1 -m $2 -u $3
+./rwsl destroy -d $1 -m $2 -u $3 -r $4
 
-./rwsl install -d $1 -m $2 -u $3
+./rwsl install -d $1 -m $2 -u $3 -r $4
 
 echo '
 ################################
@@ -20,7 +20,7 @@ echo '
 '
 
 echo "Preparing docker desktop...(if installed)"
-./rwsl docker -d $1 -m $2 -u $3
+./rwsl docker -d $1 -m $2 -u $3 -r $4
 
 echo '
 ################################
@@ -29,7 +29,7 @@ echo '
 '
 
 echo "Preparing env..."
-./rwsl setup -d $1 -m $2 -u $3
+./rwsl setup -d $1 -m $2 -u $3 -r $4
 
 echo '
 ################################
@@ -38,7 +38,7 @@ echo '
 '
 
 echo "Running test...(if exists)"
-./rwsl test -d $1 -m $2 -u $3
+./rwsl test -d $1 -m $2 -u $3 -r $4
 
 echo '
 ################################
@@ -47,4 +47,4 @@ echo '
 '
 
 echo "Entering distro..."
-./rwsl enter -d $1 -m $2 -u $3
+./rwsl enter -d $1 -m $2 -u $3 -r $4

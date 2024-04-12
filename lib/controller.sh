@@ -3,7 +3,7 @@
 source ./lib/waiting.sh
 
 COMMAND_PATH=./lib/commands/
-COMMAND="\${COMMAND_PATH}\${FUNCNAME[0]}_distro.sh \$1 \$2 \$3"
+COMMAND="\${COMMAND_PATH}\${FUNCNAME[0]}_distro.sh \$1 \$2 \$3 \$4"
 
 init() {
     eval ${COMMAND}
@@ -58,7 +58,7 @@ status() {
 }
 
 up() {
-    eval ${COMMAND} & waiting
+    eval ${COMMAND}
 }
 
 tips() {

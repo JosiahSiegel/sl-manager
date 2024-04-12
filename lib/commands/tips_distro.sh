@@ -33,5 +33,5 @@ FILE=./modules/$2/tips_distro.sh
 if [[ -f $FILE ]]; then
     echo -e "# MODULE SPECIFIC TIPS\n"
     echo -e "======================="
-    $FILE $1 $2 $3
+    $FILE $1 $2 $3 $4
 fi

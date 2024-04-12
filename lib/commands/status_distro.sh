@@ -34,6 +34,6 @@ echo '
 FILE=./modules/$2/status_distro.sh
 if [[ -f "$FILE" ]]; then
     echo "Fetching module specific application status"
-    $FILE $1 $2 $3
+    $FILE $1 $2 $3 $4
     echo "Completed module specific application status"
 fi

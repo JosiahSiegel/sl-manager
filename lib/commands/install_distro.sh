@@ -4,6 +4,13 @@ source ./lib/waiting.sh
 
 nohup wsl --install -d $1 &
 sleep 30
+wsl -d $1 -e bash -c \
+' \
+poweroff -f \
+'
+wsl.exe --shutdown
+sleep 10
+wsl --manage $1 --set-sparse true
 
 echo "Creating dev env"
 echo ""
@@ -25,8 +32,8 @@ apt-get update; \
 apt-get install gh -y; \
 '
 
-./lib/commands/gpg_import.sh $1 $2 $3
-./lib/commands/git_setup.sh $1 $2 $3
+./lib/commands/gpg_import.sh $1 $2 $3 $4
+./lib/commands/git_setup.sh $1 $2 $3 $4
 
 wsl -d $1 -u $3 -e bash -c \
 ' \
@@ -48,6 +55,6 @@ echo "nameserver 8.8.8.8" > /etc/resolv.conf; \
 FILE=./modules/$2/install_distro.sh
 if [[ -f "$FILE" ]]; then
     echo "Running module specific install"
-    $FILE $1 $2 $3 &>/dev/null & waiting
+    $FILE $1 $2 $3 $4 &>/dev/null & waiting
     echo "Completed module specific install"
 fi

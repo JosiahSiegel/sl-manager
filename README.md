@@ -10,11 +10,12 @@
 
 Easily manage your WSL environment with a handful of generic commands.
 Applications are seperated into [modules](modules/).
+Remote repository is cloned into distro if specified (`-r`).
 
 ## Quick start
 
 ```sh
-./rwsl init -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module
+./rwsl init -d "Ubuntu-18.04" -m "generic" # -d:Distro, -m:Module, -u:User, -r:Repo
 ```
 or
 ```sh
@@ -84,11 +85,12 @@ m="generic"; # Module name
 
 **Optional:**
  * `-u`, `--user`    VAL  username
+ * `-r`, `--repo`    VAL  Repository url
  * `-h`, `--help`         Prints this help
 
 **Examples:** 
  * `./rwsl [COMMAND] -d VAL -m VAL -u VAL`
- * `./rwsl init -d "Ubuntu-18.04" -m "generic" -u "user3"`
+ * `./rwsl init -d 'Ubuntu-18.04' -m 'generic' -u 'user3' -r 'https://github.com/JosiahSiegel/rapid-wsl.git'`
 
 ## Tips
 

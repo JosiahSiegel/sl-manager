@@ -7,8 +7,8 @@ margs=2
 
 # Common functions - BEGIN
 function example {
-  echo -e "example: ./rwsl [COMMAND] -d VAL -m VAL -u VAL"
-  echo -e "example: ./rwsl init -d 'Ubuntu-18.04' -m 'generic' -u 'user3'"
+  echo -e "example: ./rwsl [COMMAND] -d VAL -m VAL -u VAL -r VAL"
+  echo -e "example: ./rwsl init -d 'Ubuntu-18.04' -m 'generic' -u 'user3' -r 'https://github.com/JosiahSiegel/rapid-wsl.git'"
 }
 
 function usage {
@@ -22,7 +22,8 @@ function help {
   echo -e "  -m, --module  VAL  Application name\n"
   echo -e "OPTION:"
   echo -e "  -u, --user    VAL  Username"
-  echo -e "  -h,  --help        Prints this help\n"
+  echo -e "  -r, --repo    VAL  Repository url"
+  echo -e "  -h, --help        Prints this help\n"
   example
 }
 
@@ -58,6 +59,7 @@ margs_precheck $# $1
 distro=
 module=
 user="user"
+repo=
 
 i=0
 command=""
@@ -76,6 +78,10 @@ while [ "$1" != "" ]; do
   -u | --user)
     shift
     user=$1
+    ;;
+  -r | --repo)
+    shift
+    repo=$1
     ;;
   -h | --help)
     help
@@ -153,5 +159,5 @@ done
 
 # Pass here your mandatory args for check
 margs_check $distro $module
-
-eval $command "$distro" "$module" "$user"
+echo "$distro $module $user $repo"
+eval $command "$distro" "$module" "$user" "$repo"
