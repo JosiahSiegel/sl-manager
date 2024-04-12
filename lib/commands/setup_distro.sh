@@ -16,8 +16,6 @@ else
     git config --global --add safe.directory $repo_name; \
     sudo chown -R '"$3"':'"$3"' .; \
     echo "cd ~/repos/$repo_name/" >>~/.bashrc; \
-    cd $repo_name; \
-    code .; \
     '
 fi
 

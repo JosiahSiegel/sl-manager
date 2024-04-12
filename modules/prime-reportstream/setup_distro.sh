@@ -40,6 +40,5 @@ cp -n operations/app/src/environments/configurations/dev.tfbackend /mnt'${PWD}'/
 cp -n operations/app/src/environments/configurations/dev.tfvars /mnt'${PWD}'/etc/; \
 cp /mnt'${PWD}'/etc/dev.tfbackend operations/app/src/environments/configurations/; \
 cp /mnt'${PWD}'/etc/dev.tfvars operations/app/src/environments/configurations/; \
-code .; \
 sudo chown -R '"$3"':'"$3"' .; \
 '

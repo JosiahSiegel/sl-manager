@@ -13,5 +13,4 @@ python3 -m venv .venv; \
 source .venv/bin/activate; \
 sudo chown -R '"$3"':'"$3"' .; \
 echo "cd ~/repos/prime-public-health-data-infrastructure/" >>~/.bashrc; \
-code .; \
 '
